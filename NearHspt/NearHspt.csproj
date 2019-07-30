@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ZZ_I_Routines\**" />
+    <EmbeddedResource Remove="ZZ_I_Routines\**" />
+    <None Remove="ZZ_I_Routines\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="00_Utils\ISpeechToText.cs" />
+    <Compile Remove="00_Utils\ISpracheTxt1.cs" />
+    <Compile Remove="00_Utils\ISpracheTxt2.cs" />
+    <Compile Remove="00_Utils\ITextToSpeech.cs" />
+    <Compile Remove="00_Utils\Utils.cs" />
+    <Compile Remove="S00_Splash\AHeadSplash1.xaml.cs" />
+    <Compile Remove="S00_Splash\HospitalDetails.xaml.cs" />
+    <Compile Remove="Utils.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="S00_Splash\AHeadSplash1.xaml" />
+    <EmbeddedResource Remove="S00_Splash\HospitalDetails.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Kranken.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="kranken.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="S00_Splash\Entry100.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NearHspt.HospitalList">
+
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <On Platform="iOS" Value="0, 20, 0, 0" />
+      <On Platform="Android" Value="0, 0, 0, 0" />
+      <On Platform="UWP" Value="0, 0, 0, 0" />
+    </OnPlatform>
+  </ContentPage.Padding>
+
+  <ListView x:Name="listView6">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+              <Label Text="{Binding DisplayName}"
+                     TextColor="Black" 
+                     FontSize="Small"/>
+            </StackLayout>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+
+</ContentPage>
